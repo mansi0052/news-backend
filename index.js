@@ -9,7 +9,11 @@ import summariesRouter from "./routes/summaries.routes.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://news-frontend-rosy.vercel.app/",
+  credentials: true
+}));
+
 app.use(express.json());
 
 //environment variables

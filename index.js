@@ -4,6 +4,9 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import fetch from "node-fetch";
 import summariesRouter from "./routes/summaries.routes.js";
+import newsRouter from "./routes/news.routes.js";
+
+app.use("/api", newsRouter); 
 
 dotenv.config();
 

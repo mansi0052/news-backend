@@ -1,7 +1,6 @@
-// controllers/summary.controller.js
 import Summary from "../models/summary.js";
 
-// Save summary (only if not already saved for the same user and URL)
+// Save summary
 export const saveSummary = async (req, res) => {
   const { title, url, summary, source, date } = req.body;
 
@@ -10,7 +9,7 @@ export const saveSummary = async (req, res) => {
   }
 
   try {
-    // Check if summary exists for this user and article
+    // Check if summary exists for this
     const existing = await Summary.findOne({ url, user: req.user.id });
     if (existing) return res.status(200).json(existing);
 

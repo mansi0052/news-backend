@@ -1,4 +1,3 @@
-// routes/savedSummary.routes.js
 import express from "express";
 import { saveSummary, getSummaries } from "../controllers/savedSummary.controller.js";
 

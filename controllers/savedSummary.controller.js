@@ -1,7 +1,5 @@
-// controllers/savedSummary.controller.js
 import SavedSummary from "../models/savedSummary.model.js";
 
-// POST /api/summaries
 export const saveSummary = async (req, res) => {
   try {
     const { title, source, summary, date, url } = req.body;
@@ -20,7 +18,6 @@ export const saveSummary = async (req, res) => {
   }
 };
 
-// GET /api/summaries
 export const getSummaries = async (req, res) => {
   try {
     const summaries = await SavedSummary.find().sort({ date: -1 });

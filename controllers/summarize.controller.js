@@ -1,4 +1,3 @@
-// controllers/summarize.controller.js
 export const summarizeArticle = async (req, res) => {
   const { prompt } = req.body;
 

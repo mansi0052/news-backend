@@ -1,10 +1,8 @@
-// routes/summaries.routes.js
 import express from "express";
 import Summary from "../models/summary.js";
 
 const router = express.Router();
 
-// 🔹 GET summary by ID (optional)
 router.get("/:id", async (req, res) => {
   try {
     const summary = await Summary.findById(req.params.id);
@@ -16,7 +14,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// 🔹 GET all summaries
+//GET all summaries
 router.get("/", async (req, res) => {
   try {
     const all = await Summary.find().sort({ date: -1 });
@@ -27,7 +25,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// 🔹 POST a new summary
+//POST a new summary
 router.post("/", async (req, res) => {
   const { title, url, source, date, summary } = req.body;
 
@@ -46,7 +44,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// 🔹 DELETE summary by ID
+//DELETE summary by ID
 router.delete("/:id", async (req, res) => {
   try {
     const deleted = await Summary.findByIdAndDelete(req.params.id);
@@ -57,7 +55,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// 🔹 PATCH (update) summary text
+//update summary text
 router.patch("/:id", async (req, res) => {
   try {
     const updated = await Summary.findByIdAndUpdate(

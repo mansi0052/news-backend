@@ -1,5 +1,3 @@
-// models/savedSummary.model.js
-
 import mongoose from "mongoose";
 
 const savedSummarySchema = new mongoose.Schema({
@@ -8,7 +6,7 @@ const savedSummarySchema = new mongoose.Schema({
   summary: { type: String, required: true },
   date: { type: String },
   url: { type: String },
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, // optional
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 });
 
 const SavedSummary = mongoose.model("SavedSummary", savedSummarySchema);
